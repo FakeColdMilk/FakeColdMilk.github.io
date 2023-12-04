@@ -1,0 +1,166 @@
+body {
+background-color: black;
+}
+
+
+* {
+
+margin: 0;
+padding: 0;
+
+}
+
+   
+
+
+
+
+.container {
+    width: 100%;
+    height: 45vh;
+    background-image: url(jjk.jpeg);
+    background-size: cover;
+}
+
+.menu {
+    width: 35px;
+    height: 5px;
+    background-color: rgb(0, 0, 0, 0.7);
+    margin: 6px 0;
+
+}
+
+.menucontainer {
+margin: -6px 0;
+float: right;
+}
+
+.imgsteam {
+
+opacity: 0.6;
+
+
+}
+
+
+
+.flex-container {
+    display: flex;
+    color: white;
+    padding-top: 250px;
+    padding-left: 15px;
+  }
+
+  .searchBar {
+    display: flex;
+    padding-top: 25px;
+    overflow: hidden;
+    color: white;
+    
+    
+}
+.searchBox {
+    border: 0;
+    flex: 1;
+    background-color: black;
+    color: white;
+}
+.searchButton {
+    color: gray;
+    background-color: black;
+    border: 0;
+    padding: 0.8rem;
+}
+
+.flexfilter {
+
+display: flex;
+color: black;
+background-color: black;
+padding: 10px;
+gap: 65px;
+
+}
+
+
+.flexfilter2 {
+
+display: flex;
+}
+
+.flexbigtext {
+display: flex;
+padding-left: 14px;
+padding-top: 5px;
+}
+
+.flexark{
+
+display: flex;
+background-image: url(ark.jpg);
+background-size: cover;
+height: 14vh;
+width: 220px;
+padding-left: 5px;
+}
+
+.flexarktxt {
+
+display: flex;
+padding-left: 235px;
+padding-top: 10px;
+}
+
+.flexwrc {
+display: flex;    
+background-image: url(wrc.jpg);
+background-size: cover;
+height: 14vh;
+width: 220px;
+padding-left: 5px;
+}
+
+.flexwrctxt {
+
+display: flex;
+padding-left: 235px;
+padding-top: 12px;
+}
+
+.flexdiab{
+
+display: flex;
+background-image: url(diablo.jpg);
+background-size: cover;
+height: 14vh;
+width: 220px;
+padding-left: 5px;
+}
+
+.flexdiabtxt {
+display: flex;
+padding-left: 235px;
+padding-top: 12px;
+
+
+}
+.flexgreentext3 {
+
+    display: flex;
+    padding-left: 9px;
+    padding-top: 12px;
+
+}
+
+
+.wow{
+background-color: rgba(128, 128, 128, 0.7);
+border: none;
+font-weight: bold;
+padding: 9px 0px;
+width: 43px;
+height: 30px;
+align-items: center;
+border-radius: 5px;
+color: rgba(255, 255, 255, 0.7)
+}
