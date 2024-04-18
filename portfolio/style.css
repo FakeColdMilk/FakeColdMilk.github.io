@@ -1,18 +1,98 @@
-*{margin:0; padding: 0; box-sizing: border-box;}
 body {
-    background-image: url(bakgrund.jpg);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+section {
+    padding: 30px;
+}
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.project-card {
+    width: calc(30% - 20px);
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.flip-card {
+    perspective: 1000px;
+    width: 100%;
+    cursor: pointer; /* Add this to indicate it's clickable */
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
     width: 100%;
     height: 100%;
-    background-size: cover;
+    position: absolute;
+    backface-visibility: hidden;
 }
 
-
-
-
-.navbar {
-
-width: 100%;
-height: 15vh;
-background-color: rgb(0, 0, 0, 0.9);
-background-size: cover;
+.flip-card-front {
+    background-color: #f4f4f4;
+    color: black;
 }
+
+.flip-card-back {
+    background-color: #333;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
