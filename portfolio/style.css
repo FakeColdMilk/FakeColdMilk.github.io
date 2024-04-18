@@ -80,7 +80,10 @@ width: 500px;
 height: 500px; 
  transition: transform 0.6s;
  transform-style: preserve-3d;
-
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding-top: 25px;
 }
 
 .flip-card.flipped .flip-card-inner {
@@ -99,6 +102,7 @@ height: 500px;
     color: black;
     text-align: center;
     padding: 40px;
+    
 }
 
 .flip-card-back {
@@ -106,10 +110,12 @@ height: 500px;
     color: white;
     transform: rotateY(180deg);
     padding: 40px;
+  
 }
 
 .flip-card-back img {
     max-width: 100%;
     max-height: 100%;
+  
 }
 
