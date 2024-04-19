@@ -76,8 +76,8 @@ form button {
 
 
 .flip-card-inner {
-width: 500px; 
-height: 500px; 
+width: 650px; 
+height: 450px; 
  transition: transform 0.6s;
  transform-style: preserve-3d;
  display: flex;
