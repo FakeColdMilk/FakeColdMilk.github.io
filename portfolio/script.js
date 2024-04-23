@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuItems = document.querySelectorAll("nav ul li");
     const projectCards = document.querySelectorAll(".project-card");
 
-    header.addEventListener("mouseenter", () => header.style.backgroundColor = "#555");
-    header.addEventListener("mouseleave", () => header.style.backgroundColor = "#333");
+   
 
     menuItems.forEach(item => {
         item.addEventListener("mouseenter", () => item.style.transform = "translateY(-3px)");
