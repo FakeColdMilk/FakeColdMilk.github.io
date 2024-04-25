@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     const flipCard = document.querySelector(".flip-card");
 
