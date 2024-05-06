@@ -115,7 +115,7 @@ width: 100%;
 .flip-card-inner-2 {
 background-color: red;
 width: 500px; 
-height: 710px; 
+height: 850px; 
  transition: transform 0.6s;
  transform-style: preserve-3d;
  display: flex;
@@ -144,7 +144,7 @@ height: 710px;
 }
 
 .flip-card-back-2 {
-    background-color: #fb00ff;
+ 
     color: white;
     transform: rotateY(180deg);
 width: 100%;
@@ -167,6 +167,11 @@ padding: 20px;
     text-align: center;
 }
 .static-iframe {
-    pointer-events: all;
+    pointer-events: none;
     overflow-y: scroll;
+}
+
+html {
+scroll-behavior: smooth;
+
 }
