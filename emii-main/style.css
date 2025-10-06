@@ -1,0 +1,304 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* VARIABLES */
+:root {
+    --dark-color: rgb(2, 4, 8);
+    --dark-hover: rgba(255, 255, 255, 0.1);
+
+    --light-color: rgb(245, 245, 245);
+    --light-hover: rgba(0, 0, 0, 0.1);
+}
+
+/* GENERAL */
+body {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace, sans-serif;
+    font-size: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+body.light-mode {
+    color: var(--dark-color);
+    background-color: var(--light-color)
+}
+
+body.light-mode #toggle-mode-btn:hover {
+    background-color: var(--light-hover);
+}
+
+body.dark-mode {
+    color: var(--light-color);
+    background-color: var(--dark-color);
+}
+
+body.dark-mode #toggle-mode-btn:hover {
+    background-color: var(--dark-hover);
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+input {
+    display: none;
+}
+
+/* MAIN */
+#toggle-mode-btn {
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+#portfolio-link {
+    padding-right: 0.5rem;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    font-size: 0.75rem;
+}
+
+#github-link {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+/* RESPONSIVE WARNING */
+#responsive-warning {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    z-index: 9999;
+}
+
+.warning-icons {
+    font-size: 10rem;
+}
+
+@media (max-width: 768px) {
+    #responsive-warning.show {
+        display: flex;
+    }
+}
+
+/* FLIP BOOK */
+#flip_book {
+    width: 298px;
+    height: 420px;
+    position: relative;
+    transition-duration: 1s;
+    perspective: 2000px;
+}
+
+.front_cover,
+.back_cover {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2.5px 5px 5px 2.5px;
+    background-image: url(./assets/images/flip_book_edge_shading.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(220, 20, 60);
+    box-shadow: 0 0 5px 0 rgb(25, 25, 25, 0.25);
+}
+
+.front_cover {
+    position: absolute;
+    cursor: pointer;
+    transform-origin: center left;
+    transition: transform 0.5s;
+    z-index: 99;
+}
+
+.front_cover label {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.page {
+    width: 288px;
+    height: 400px;
+    position: absolute;
+    top: 10px;
+    left: 1px;
+    border-radius: 0 5px 5px 0;
+    background-color: white;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition-duration: 0.5s;
+}
+
+/* page faces */
+.front_page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front_page label {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.back_page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    z-index: 100;
+}
+
+.back_page label {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.edge_shading {
+    width: 288px;
+    height: 400px;
+    position: absolute;
+    z-index: 98;
+}
+
+.front_content {
+    width: 287px;
+    height: 398px;
+    position: absolute;
+    top: 1px;
+    border-radius: 0 5px 5px 0;
+    z-index: 97;
+}
+
+.back_content {
+    width: 287px;
+    height: 398px;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    border-radius: 5px 0 0 5px;
+    z-index: 97;
+}
+
+.back_cover {
+    position: relative;
+    z-index: -1;
+}
+
+/* initial stacking order for 23 pages (page1 highest) */
+#page1  { z-index: 24; }
+#page2  { z-index: 23; }
+#page3  { z-index: 22; }
+#page4  { z-index: 21; }
+#page5  { z-index: 20; }
+#page6  { z-index: 19; }
+#page7  { z-index: 18; }
+#page8  { z-index: 17; }
+#page9  { z-index: 16; }
+#page10 { z-index: 15; }
+#page11 { z-index: 14; }
+#page12 { z-index: 13; }
+#page13 { z-index: 12; }
+#page14 { z-index: 11; }
+#page15 { z-index: 10; }
+#page16 { z-index: 9;  }
+#page17 { z-index: 8;  }
+#page18 { z-index: 7;  }
+#page19 { z-index: 6;  }
+#page20 { z-index: 5;  }
+#page21 { z-index: 4;  }
+#page22 { z-index: 3;  }
+#page23 { z-index: 2;  }
+
+/* cover transform */
+#cover_checkbox:checked~#flip_book {
+    transform: translateX(144px)
+}
+
+#cover_checkbox:checked~#flip_book .front_cover {
+    transform: rotateY(-180deg);
+    transition: transform 1.5s, z-index 0.5s 0.5s;
+    z-index: 1;
+}
+
+#cover_checkbox:checked~#flip_book #cover {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+}
+
+/* page flip checked rules (rotate the given page) */
+/* For all pages, rotate and raise z-index when their checkbox is checked. */
+#page1_checkbox:checked~#flip_book #page1  { transform: rotateY(-180deg); z-index: 110; }
+#page2_checkbox:checked~#flip_book #page2  { transform: rotateY(-180deg); z-index: 111; }
+#page3_checkbox:checked~#flip_book #page3  { transform: rotateY(-180deg); z-index: 112; }
+#page4_checkbox:checked~#flip_book #page4  { transform: rotateY(-180deg); z-index: 113; }
+#page5_checkbox:checked~#flip_book #page5  { transform: rotateY(-180deg); z-index: 114; }
+#page6_checkbox:checked~#flip_book #page6  { transform: rotateY(-180deg); z-index: 115; }
+#page7_checkbox:checked~#flip_book #page7  { transform: rotateY(-180deg); z-index: 116; }
+#page8_checkbox:checked~#flip_book #page8  { transform: rotateY(-180deg); z-index: 117; }
+#page9_checkbox:checked~#flip_book #page9  { transform: rotateY(-180deg); z-index: 118; }
+#page10_checkbox:checked~#flip_book #page10{ transform: rotateY(-180deg); z-index: 119; }
+#page11_checkbox:checked~#flip_book #page11{ transform: rotateY(-180deg); z-index: 120; }
+#page12_checkbox:checked~#flip_book #page12{ transform: rotateY(-180deg); z-index: 121; }
+#page13_checkbox:checked~#flip_book #page13{ transform: rotateY(-180deg); z-index: 122; }
+#page14_checkbox:checked~#flip_book #page14{ transform: rotateY(-180deg); z-index: 123; }
+#page15_checkbox:checked~#flip_book #page15{ transform: rotateY(-180deg); z-index: 124; }
+#page16_checkbox:checked~#flip_book #page16{ transform: rotateY(-180deg); z-index: 125; }
+#page17_checkbox:checked~#flip_book #page17{ transform: rotateY(-180deg); z-index: 126; }
+#page18_checkbox:checked~#flip_book #page18{ transform: rotateY(-180deg); z-index: 127; }
+#page19_checkbox:checked~#flip_book #page19{ transform: rotateY(-180deg); z-index: 128; }
+#page20_checkbox:checked~#flip_book #page20{ transform: rotateY(-180deg); z-index: 129; }
+#page21_checkbox:checked~#flip_book #page21{ transform: rotateY(-180deg); z-index: 130; }
+#page22_checkbox:checked~#flip_book #page22{ transform: rotateY(-180deg); z-index: 131; }
+#page23_checkbox:checked~#flip_book #page23{ transform: rotateY(-180deg); z-index: 132; }
